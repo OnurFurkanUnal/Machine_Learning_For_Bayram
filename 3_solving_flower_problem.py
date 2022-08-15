@@ -61,7 +61,7 @@ for i in range(100000):
         ri = np.random.randint(len(data))
         point = data[ri]
 
-        z = point[0] * w1 + point[1] * w1 + b
+        z = point[0] * w1 + point[1] * w2 + b
         pred = sigmoid(z)
 
         target = point[2]
@@ -93,16 +93,16 @@ plt.show(block=True)
 for i in range(len(data)):
         point = data[i]
         print(point)
-        z = point[0] * w1 + point[1] * w1 + b
+        z = point[0] * w1 + point[1] * w2 + b
         pred = sigmoid(z)
         print("pred: {}".format(pred))
-z = mystery_flower[0] * w1 + mystery_flower[1] * w1 + b
+z = mystery_flower[0] * w1 + mystery_flower[1] * w2 + b
 pred = sigmoid(z)
 print(pred)
 
 # test
 def which_flower(lenght, width):
-        z = lenght * w1 + width * w1 + b
+        z = lenght * w1 + width * w2 + b
         pred = sigmoid(z)
         if pred < .5:
                 print("blue")
